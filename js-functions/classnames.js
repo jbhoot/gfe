@@ -2,7 +2,7 @@
  * @param {...(any|Object|Array<any|Object|Array>)} args
  * @return {string}
  */
-export default function classNamesRecursive(...args) {
+export default function classNamesRecursiveForEach(...args) {
     const classes = [];
 
     args.forEach((arg) => {
@@ -35,6 +35,42 @@ export default function classNamesRecursive(...args) {
     return classes.join(" ").trim();
 }
 
+/**
+ * @param {...(any|Object|Array<any|Object|Array>)} args
+ * @return {string}
+ */
+export default function classNamesRecursiveForLoop(...args) {
+  const classes = [];
+
+  for (const arg of args) {
+    const typeOfArg = typeof arg;
+
+    if (!arg) {
+      continue;
+    }
+
+    if (typeOfArg === "number" || typeOfArg === "string") {
+      classes.push(arg);
+      continue;
+    }
+
+    if (typeOfArg === "object" && !Array.isArray(arg)) {
+      for (const key in arg) {
+        if (Object.hasOwn(arg, key) && arg[key]) {
+          classes.push(key);
+        }
+      }
+      continue;
+    }
+
+    if (Array.isArray(arg)) {
+      classes.push(classNames(...arg));
+      continue;
+    }
+  }
+
+  return classes.join(" ").trim();
+}
 
 /**
  * @param {...(any|Object|Array<any|Object|Array>)} args
