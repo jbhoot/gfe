@@ -14,13 +14,13 @@ A string is considered balanced if:
  * - 1 <= `str.length` <= 1000
  * - `str` contains only the characters `(`, `)`, `{`, `}`, `[` and `]`
  *
- * @TimeComplexity `O(n)`
- * @SpaceComplexity `O(n)`
- *
  * @example
  * isBalancedBrackets("[]") // => true
  * isBalancedBrackets("([)]") // => false
  * isBalancedBrackets("([]){}") // => true
+ *
+ * @TimeComplexity `O(n)`
+ * @SpaceComplexity `O(n)`
  */
 export default function isBalancedBrackets(str) {
   const map = {
