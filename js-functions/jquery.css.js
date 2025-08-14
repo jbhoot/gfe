@@ -1,7 +1,7 @@
 /**
- * @param {string} selector
- * @return {{css: Function}}
- */
+@param {string} selector
+@return {{css: Function}}
+*/
 export default function $(selector) {
   return {
     css: function (prop, value) {

@@ -1,8 +1,8 @@
 /**
- * @param {Array<string>} items
- * @param {{sorted?: boolean, length?: number, unique?: boolean}} [options]
- * @return {string}
- */
+@param {Array<string>} items
+@param {{sorted?: boolean, length?: number, unique?: boolean}} [options]
+@return {string}
+*/
 export default function listFormat(items, options = {}) {
   // filter out empty items
   let names = items.filter((i) => i);

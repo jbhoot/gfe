@@ -1,22 +1,22 @@
 /**
- * @description
+@description
 Given an array of integers `numbers`, determine the subarray that has the highest product and return that product.
 
 A subarray is a contiguous segment of an array where all elements are taken from consecutive indices, preserving their order, such as `[2, 3]` in `[1, 2, 3, 4]`, while non-contiguous selections like `[1, 3]` are not valid subarray.
- *
- * @type {(numbers: number[]) => number[]}
- *
- * @constraint
- * - The test cases are designed such that the result will fit within a 32-bit integer
- * - The product of any prefix or suffix of numbers is guaranteed to fit in a 32-bit integer
- * - 1 <= `numbers.length` <= 1000
- * - -10 <= `numbers[i]` <= 10
- *
- * @example
- * maxProductSubArray([1, 2, -3, 5, 1]) // => 5
- * maxProductSubArray([9]) // => 9
- * maxProductSubArray([1, 2, 0, -1, 8, -4]) // => 32
- */
+
+@type {(numbers: number[]) => number[]}
+
+@constraint
+- The test cases are designed such that the result will fit within a 32-bit integer
+- The product of any prefix or suffix of numbers is guaranteed to fit in a 32-bit integer
+- 1 <= `numbers.length` <= 1000
+- -10 <= `numbers[i]` <= 10
+
+@example
+maxProductSubArray([1, 2, -3, 5, 1]) // => 5
+maxProductSubArray([9]) // => 9
+maxProductSubArray([1, 2, 0, -1, 8, -4]) // => 32
+*/
 function maxProductSubArray(numbers) {
   // recentMinProduct is needed due to negative numbers.
   // Multiplying a maximum product with a negative value can product a minimum product. But multiplying this minimum product with another negative value down the line in the array can turn it into the maximum product immediately.
@@ -28,8 +28,8 @@ function maxProductSubArray(numbers) {
   let bestMaxProduct = maxProductSoFar;
 
   for (const currVal of numbers.slice(1)) {
-    const currMaxProduct = maxProductSoFar * currVal;
-    const currMinProduct = minProductSoFar * currVal;
+    const currMaxProduct = maxProductSoFarcurrVal;
+    const currMinProduct = minProductSoFarcurrVal;
 
     maxProductSoFar = Math.max(currVal, currMaxProduct, currMinProduct);
     minProductSoFar = Math.min(currVal, currMaxProduct, currMinProduct);

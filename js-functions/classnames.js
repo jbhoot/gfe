@@ -1,8 +1,8 @@
 /**
- * @param {...(any|Object|Array<any|Object|Array>)} args
- * @return {string}
- */
-export default function classNamesRecursiveForEach(...args) {
+@param {...(any|Object|Array<any|Object|Array>)} args
+@return {string}
+*/
+export function classNamesRecursiveForEach(...args) {
     const classes = [];
 
     args.forEach((arg) => {
@@ -36,10 +36,10 @@ export default function classNamesRecursiveForEach(...args) {
 }
 
 /**
- * @param {...(any|Object|Array<any|Object|Array>)} args
- * @return {string}
- */
-export default function classNamesRecursiveForLoop(...args) {
+@param {...(any|Object|Array<any|Object|Array>)} args
+@return {string}
+*/
+export function classNamesRecursiveForLoop(...args) {
   const classes = [];
 
   for (const arg of args) {
@@ -73,10 +73,10 @@ export default function classNamesRecursiveForLoop(...args) {
 }
 
 /**
- * @param {...(any|Object|Array<any|Object|Array>)} args
- * @return {string}
- */
-export default function classNamesIterative(...args) {
+@param {...(any|Object|Array<any|Object|Array>)} args
+@return {string}
+*/
+export function classNamesIterative(...args) {
     // Set to ensure that the final result does not have duplicates.
     const classes = new Set();
 

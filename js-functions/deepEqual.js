@@ -1,8 +1,8 @@
 /**
- * @param {*} valueA
- * @param {*} valueB
- * @return {boolean}
- */
+@param {*} valueA
+@param {*} valueB
+@return {boolean}
+*/
 export default function deepEqual(valueA, valueB) {
   if (
     (valueA === null && valueB === null) ||
